@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+
+    "worker:dev": "wrangler dev",
+    "worker:deploy": "wrangler deploy"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.2",
@@ -18,6 +21,7 @@
     "@vitejs/plugin-vue": "^6.0.7",
     "drizzle-kit": "^0.31.10",
     "typescript": "^7.0.2",
-    "vite": "^8.1.1"
+    "vite": "^8.1.1",
+    "wrangler": "^4.113.0"
   }
 }

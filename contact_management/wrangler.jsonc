@@ -1,6 +1,6 @@
 {
 	"name": "contact-management",
-	"main": "src/server/index.ts",
+	"main": "server/index.ts",
 	"compatibility_date": "2026-07-22",
 	"d1_databases": [
 		{
