@@ -13,6 +13,7 @@
 import { Hono } from "hono";
 
 import contactRoutes from "./routes/contacts";
+import { D1Database } from "@cloudflare/workers-types";
 
 type Bindings = {
   DB: D1Database;
