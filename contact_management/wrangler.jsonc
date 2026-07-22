@@ -1,7 +1,12 @@
 {
 	"name": "contact-management",
 	"main": "server/index.ts",
+	"dist": "",
 	"compatibility_date": "2026-07-22",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
 	"d1_databases": [
 		{
 			"binding": "DB",
