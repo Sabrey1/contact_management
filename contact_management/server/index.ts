@@ -30,6 +30,12 @@ app.get("/api/hello", (c) => {
   });
 });
 
+
+
 app.route("/api/contacts", contactRoutes);
 
+//frontend route
+app.get("*", async (c) => {
+  return c.env.ASSETS.fetch(c.req.raw);
+});
 export default app;
