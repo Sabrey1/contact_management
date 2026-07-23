@@ -10,6 +10,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: contact_management
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,6 +23,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: contact_management/package-lock.json
 
       - name: Install dependencies
         run: npm ci
