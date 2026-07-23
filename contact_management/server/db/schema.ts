@@ -66,3 +66,17 @@ export const roles = sqliteTable("roles", {
 
   description: text("description"),
 });
+
+export const categories = sqliteTable("categories", {
+  id: integer("id").primaryKey({
+    autoIncrement: true,
+  }),
+
+  name: text("name").notNull(),
+
+  description: text("description"),
+
+  createdAt: text("created_at")
+    .notNull()
+    .default("CURRENT_TIMESTAMP"),
+});
