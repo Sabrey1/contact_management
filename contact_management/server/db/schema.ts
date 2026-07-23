@@ -10,12 +10,27 @@ export const contacts = sqliteTable("contacts", {
   }),
 
   firstName: text("first_name").notNull(),
-
   lastName: text("last_name").notNull(),
+  email: text("email"),
+  phone: text("phone"),
+  company: text("company"),
+});
+
+export const customers = sqliteTable("customers", {
+  id: integer("id")
+    .primaryKey({
+      autoIncrement: true,
+    }),
+
+  firstName: text("first_name")
+    .notNull(),
+
+  lastName: text("last_name")
+    .notNull(),
 
   email: text("email"),
 
   phone: text("phone"),
 
-  company: text("company"),
+  address: text("address"),
 });
