@@ -15,6 +15,13 @@
       "when": 1784800774971,
       "tag": "0001_misty_norman_osborn",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1784813004561,
+      "tag": "0002_flowery_agent_brand",
+      "breakpoints": true
     }
   ]
 }
