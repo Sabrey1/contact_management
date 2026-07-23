@@ -55,3 +55,14 @@ export const employees = sqliteTable("employees", {
 
   address: text("address"),
 });
+
+
+export const roles = sqliteTable("roles", {
+  id: integer("id").primaryKey({
+    autoIncrement: true,
+  }),
+
+  name: text("name").notNull(), // Admin, Manager, Employee
+
+  description: text("description"),
+});
