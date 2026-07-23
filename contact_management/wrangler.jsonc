@@ -2,6 +2,7 @@
 	"name": "contact-management",
 	"main": "server/index.ts",
 	"compatibility_date": "2026-07-22",
+	"account_id": "13c4ff533a0c64dc6d3c75c741b3d763",
 	"d1_databases": [
 		{
 			"binding": "DB",
