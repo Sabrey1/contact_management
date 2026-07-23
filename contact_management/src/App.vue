@@ -1,4 +1,4 @@
 
 <template>
-  <p>Hello world</p>
+  <p>Hello world test </p>
 </template>
