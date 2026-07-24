@@ -253,7 +253,6 @@
 
 import { Hono } from "hono";
 import { eq } from "drizzle-orm";
-import { rateLimiter } from "hono-rate-limiter";
 
 import {
   contacts,
@@ -273,15 +272,33 @@ const contactRoutes = new Hono<{
   Bindings: Bindings;
 }>();
 
-const contactLimiter = rateLimiter({
-  windowMs: 60 * 1000,
-  limit: 5,
-  keyGenerator: (c) => {
-    return c.req.header("cf-connecting-ip") || "unknown";
-  },
-});
+const requestCounts = new Map<string, { count: number; resetAt: number }>();
 
-contactRoutes.post("/",contactLimiter, async(c)=>{
+const contactLimiter = async (c: any, next: any) => {
+  const key = c.req.header("cf-connecting-ip") || "unknown";
+  const now = Date.now();
+  const entry = requestCounts.get(key);
+
+  if (entry && entry.resetAt > now) {
+    if (entry.count >= 5) {
+      return c.json({
+        success: false,
+        message: "Too many requests"
+      }, 429);
+    }
+
+    entry.count += 1;
+  } else {
+    requestCounts.set(key, {
+      count: 1,
+      resetAt: now + 60_000,
+    });
+  }
+
+  await next();
+};
+
+contactRoutes.post("/", contactLimiter, async(c)=>{
 
   const db = getDB(c.env);
 
