@@ -1,1 +1,0 @@
-ALTER TABLE `contacts` ADD `company_name` text;
