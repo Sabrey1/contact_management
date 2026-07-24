@@ -5,57 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1784714606044,
-      "tag": "0000_smart_lady_vermin",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1784800774971,
-      "tag": "0001_misty_norman_osborn",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1784813004561,
-      "tag": "0002_flowery_agent_brand",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "6",
-      "when": 1784813188639,
-      "tag": "0003_faithful_fantastic_four",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "6",
-      "when": 1784813772796,
-      "tag": "0004_grey_sentry",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "6",
-      "when": 1784858220958,
-      "tag": "0005_workable_victor_mancha",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "6",
-      "when": 1784859474024,
-      "tag": "0006_dashing_amazoness",
-      "breakpoints": true
-    },
-    {
-      "idx": 7,
-      "version": "6",
-      "when": 1784860177353,
-      "tag": "0007_burly_surge",
+      "when": 1784869720714,
+      "tag": "0000_ancient_dorian_gray",
       "breakpoints": true
     }
   ]
