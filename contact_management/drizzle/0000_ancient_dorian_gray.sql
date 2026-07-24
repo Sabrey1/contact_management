@@ -1,4 +1,4 @@
-CREATE TABLE `contact_emails` (
+CREATE TABLE IF NOT EXISTS `contact_emails` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`contact_id` integer NOT NULL,
 	`email` text NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE `contact_emails` (
 	FOREIGN KEY (`contact_id`) REFERENCES `contacts`(`id`) ON UPDATE no action ON DELETE no action
 );
 --> statement-breakpoint
-CREATE TABLE `contact_phones` (
+CREATE TABLE IF NOT EXISTS `contact_phones` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`contact_id` integer NOT NULL,
 	`phone` text NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE `contact_phones` (
 	FOREIGN KEY (`contact_id`) REFERENCES `contacts`(`id`) ON UPDATE no action ON DELETE no action
 );
 --> statement-breakpoint
-CREATE TABLE `contacts` (
+CREATE TABLE IF NOT EXISTS `contacts` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`first_name` text NOT NULL,
 	`last_name` text NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `contacts` (
 	`company_name` text
 );
 --> statement-breakpoint
-CREATE TABLE `customers` (
+CREATE TABLE IF NOT EXISTS `customers` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`first_name` text NOT NULL,
 	`last_name` text NOT NULL,
@@ -31,12 +31,12 @@ CREATE TABLE `customers` (
 	`address` text
 );
 --> statement-breakpoint
-CREATE TABLE `permissions` (
+CREATE TABLE IF NOT EXISTS `permissions` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE `role_permissions` (
+CREATE TABLE IF NOT EXISTS `role_permissions` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`role_id` integer NOT NULL,
 	`permission_id` integer NOT NULL,
@@ -44,13 +44,13 @@ CREATE TABLE `role_permissions` (
 	FOREIGN KEY (`permission_id`) REFERENCES `permissions`(`id`) ON UPDATE no action ON DELETE no action
 );
 --> statement-breakpoint
-CREATE TABLE `roles` (
+CREATE TABLE IF NOT EXISTS `roles` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
 	`description` text
 );
 --> statement-breakpoint
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`username` text NOT NULL,
 	`password` text NOT NULL,
