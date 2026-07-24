@@ -8,7 +8,6 @@
 			"binding": "DB",
 			"database_name": "contact-management-db",
 			"database_id": "08804948-4b4e-4bf9-80f6-ef0a07d2c216",
-			"remote": true,
             "migrations_dir": "drizzle"
 		}
 	],
