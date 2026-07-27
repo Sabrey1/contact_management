@@ -136,28 +136,6 @@ export const permissionsRelations = relations(
 );
 
 // Role Permission Relations
-export const rolePermissionsRelations = relations(
-  rolePermissions,
-  ({ one }) => ({
-    role: one(roles, {
-      fields: [
-        rolePermissions.roleId
-      ],
-      references: [
-        roles.id
-      ],
-    }),
-
-    permission: one(permissions, {
-      fields: [
-        rolePermissions.permissionId
-      ],
-      references: [
-        permissions.id
-      ],
-    }),
-  })
-);
 
 export const customers = sqliteTable("customers", {
   id: integer("id")
